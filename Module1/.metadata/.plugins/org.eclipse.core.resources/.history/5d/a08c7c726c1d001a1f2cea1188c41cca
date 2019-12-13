@@ -1,0 +1,79 @@
+package com.capgemini.appdevelopement.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import com.capgemini.appdevelopement.bean.ContactBean;
+
+public class ContactDaoImpl implements ContactDao {
+	Properties prop;
+	ContractBean contract;
+	FileReader reader;
+	public ContractDAOImpl()
+	{
+		try {
+
+			reader = new FileReader("db.properties");
+			prop = new Properties();
+			prop.load(reader);
+			Class.forName(prop.getProperty("driverClass"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	@Override
+	public boolean addContract(ContactBean bean) {
+		try(Connection conn=DriverManager.getConnection(prop.getProperty("dbUrl"),
+				prop.getProperty("dbUser"),prop.getProperty("dbPassword"));
+				PreparedStatement pstmt=conn.prepareStatement(prop.getProperty("insertQuery"))){
+			pstmt.setInt(1, bean.getNumber());
+			pstmt.setString(2, bean.getName());
+			pstmt.setString(3, bean.getGroups());
+			
+			int count=pstmt.executeUpdate();
+			if(count>0)
+			{
+				return true;
+			}
+
+		}catch(Exception e) {
+			e.printStackTrace();
+
+		}
+		return false;
+	}
+	@Override
+	public boolean deleteContact(int number,String name) {
+		try(Connection conn=DriverManager.getConnection(prop.getProperty("dbUrl"),
+				prop.getProperty("dbUser"),prop.getProperty("dbPassword"));
+				PreparedStatement pstmt=conn.prepareStatement(prop.getProperty("deleteQuery"))){
+			pstmt.setInt(1,number);
+			pstmt.setInt(2, name);
+			int count=pstmt.executeUpdate();
+			
+			if(count>0)
+			{
+				return true;
+			}
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+
+		}
+		return false;
+	}
+
+	@Override
+	public boolean editContact(int number,String name) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	
+
+}

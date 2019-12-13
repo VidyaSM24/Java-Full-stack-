@@ -1,0 +1,5 @@
+package com.capgemini.appdevelopement.controller;
+
+public class DeleteConatct {
+
+}

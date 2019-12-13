@@ -1,0 +1,75 @@
+package com.capgemini.appdevelopement.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import com.capgemini.appdevelopement.bean.ContactBean;
+
+public class ContactDaoImpl implements ContactDao {
+	private List<ContactBean> list= new ArrayList<ContactBean>();
+	Scanner sc = new Scanner(System.in);
+
+	@Override
+	public List<ContactBean> getAllContact() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean addContact(ContactBean bean) {
+		for (ContactBean contactBean : list) {
+			if(contactBean.getNumber()==bean.getNumber())
+				return false;
+		}
+		list.add(bean);
+		return true;
+	}
+
+	@Override
+	public boolean deleteContact(int number, String name) {
+		for (ContactBean contactBean : list) {
+			ContactBean bean= null;
+			if(contactBean.getNumber()==number)
+			{
+				bean= contactBean;
+			}
+			if(bean!=null)
+			{
+				list.remove(bean);
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public boolean editContact(int number, String name) {
+		for (ContactBean contactBean : list) {
+			if(contactBean.getNumber()==number)
+			{
+				System.out.println("Enter Contact to Edit");
+				System.out.println("1.ContactNumber");
+				System.out.println("2.ContactName");
+			
+				int choice= sc.nextInt();
+				
+				switch(choice)
+				{
+				case 1:
+					System.out.println("Enter ContactName");
+					contactBean.setName(sc.next());
+					
+					
+				case 2:
+					System.out.println("Enter ContactNumber");
+					contactBean.setNumber(sc.nextInt());
+					break;				
+				}
+				
+				return true;
+			}
+		}
+		return false;
+	}
+}

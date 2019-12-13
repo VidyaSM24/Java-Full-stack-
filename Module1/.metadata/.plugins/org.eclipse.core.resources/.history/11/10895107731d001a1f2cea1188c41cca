@@ -1,0 +1,37 @@
+package com.capgemini.appdevelopement.controller;
+
+import java.util.Scanner;
+
+import com.capgemini.appdevelopement.bean.ContactBean;
+import com.capgemini.appdevelopement.factory.ContactFactory;
+import com.capgemini.appdevelopement.services.ContactServices;
+
+public class DeleteConatct {
+	public static void main(String[] args) {
+		ContactServices services = ContactFactory.instanceOfContactServices();
+		ContactBean user =new ContactBean();
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter Number to Delete");
+		user.setNumber(Long.parseLong(sc.nextLong()));
+		
+		System.out.println("Enter Password...");
+		user.setPassword(sc.nextLine());
+		
+		
+		if(services.deleteUser(user.getUserid(),user.getPassword()))
+		{
+			System.out.println("user Deleted..");
+		}else
+		{
+			System.err.println("something went wrong");
+		}
+		sc.close();
+	}
+
+		
+	}
+
+
+
+

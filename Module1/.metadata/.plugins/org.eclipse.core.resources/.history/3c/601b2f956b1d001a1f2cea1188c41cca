@@ -1,0 +1,7 @@
+driverClass=com.mysql.jdbc.Driver
+dbUrl=jdbc:mysql://localhost:3306/forestry_management
+dbUser=root
+dbPassword=root
+insertQuery=insert into product values(?,?,?)
+deleteQuery=delete from customer where userid=? password=?
+updateQuery= update contract set email=? where userid=? password=?

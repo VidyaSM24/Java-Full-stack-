@@ -1,0 +1,5 @@
+package com.capgemini.appdevelopement.factory;
+
+public class ContactFactory {
+
+}

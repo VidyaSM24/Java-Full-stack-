@@ -1,0 +1,26 @@
+package com.capgemini.appdevelopement.factory;
+
+import com.capgemini.appdevelopement.dao.ContactDao;
+import com.capgemini.appdevelopement.dao.ContactDaoImpl;
+//import com.capgemini.appdevelopement.dao.ContactDao;
+import com.capgemini.appdevelopement.services.ContactServices;
+import com.capgemini.appdevelopement.services.ContactServicesImpl;
+
+public class ContactFactory {
+		private ContactFactory() {
+
+		}
+
+		public static ContactDao instanceOfContactDAOImpl() {
+			ContactDao dao= new ContactDaoImpl();
+			
+			return dao;
+		}
+		public static ContactServices instanceOfContactServices() {
+			ContactServices services = new ContactServicesImpl();
+			return services;
+		}
+
+		
+	}
+

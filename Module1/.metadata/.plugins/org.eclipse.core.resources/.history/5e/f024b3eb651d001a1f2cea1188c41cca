@@ -1,0 +1,13 @@
+package com.capgemini.appdevelopement.dao;
+
+public class Contact {
+	
+		private String name;
+		private int number;
+		private String groups;
+		
+		
+		
+		
+	}
+	

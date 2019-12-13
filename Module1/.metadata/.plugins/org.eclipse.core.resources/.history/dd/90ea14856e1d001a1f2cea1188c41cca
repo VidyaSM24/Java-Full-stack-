@@ -1,0 +1,14 @@
+package com.capgemini.appdevelopement.services;
+
+import com.capgemini.appdevelopement.bean.ContactBean;
+
+public interface ContactServices {
+	public  boolean insertContract(ContactBean contact);
+	public boolean deleteContact(int number,String name);
+	public boolean editContact(int number,String name);
+	
+
+}
+
+
+

@@ -1,0 +1,33 @@
+package com.capgemini.appdevelopement.controller;
+
+import java.util.Scanner;
+
+import com.capgemini.appdevelopement.bean.ContactBean;
+import com.capgemini.appdevelopement.factory.ContactFactory;
+import com.capgemini.appdevelopement.services.ContactServices;
+
+public class DeleteConatct {
+	public static void main(String ar[]) {
+
+		ContactServices services= ContactFactory.instanceOfContactServices();
+		ContactBean contact = new ContactBean();
+		Scanner sc =new Scanner(System.in);
+
+		System.out.println("Enter ContractNo to delete");
+		contact.setNumber(sc.nextLong());
+	
+		
+		if(services.deleteContact(contact.getNumber(), contact.getName()))
+		{
+			System.out.println("Contract Deleted");
+		}else
+		{
+			System.err.println("Something Went Wrong");
+		}
+		sc.close();	
+	}
+
+}
+
+
+

@@ -1,0 +1,32 @@
+package com.capgemini.appdevelopement.controller;
+
+public class AddContact {
+	public static void main(String[] args) {
+		ContractServices services= ContractFactory.instanceOfContractServices();
+		ContractBean contract = new ContractBean();
+		Scanner sc =new Scanner(System.in);
+
+		System.out.println("Enter ContractNo");
+		contract.setContractNo(Integer.parseInt(sc.nextLine()));
+		System.out.println("Enter CustomerId");
+		contract.setCustomerId(Integer.parseInt(sc.nextLine()));
+		System.out.println("Enter ProductId");
+		contract.setProductId(Integer.parseInt(sc.nextLine()));
+		System.out.println("Enter HaulierId");
+		contract.setHaulierId(Integer.parseInt(sc.nextLine()));
+		System.out.println("Enter DeliveryDate");
+		contract.setDeliveryDate(sc.next());
+		System.out.println("Enter DeliveryDay");
+		contract.setDeliveryDay(sc.next());
+		System.out.println("Enter Quantity");
+		contract.setQuantity(sc.nextInt());
+
+		if(services.insertContract(contract))
+		{
+			System.out.println("Contract Inserted");
+		}else
+		{
+			System.err.println("Something Went Wrong");
+		}
+		sc.close();
+

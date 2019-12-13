@@ -1,0 +1,25 @@
+package com.capgemini.appdevelopement.services;
+
+import com.capgemini.appdevelopement.bean.ContactBean;
+import com.capgemini.appdevelopement.dao.ContactDao;
+import com.capgemini.appdevelopement.factory.ContactFactory;
+
+public class ContactServicesImpl implements ContactServices {
+	ContactDao dao= ContactFactory.instanceOfContactDAOImpl();
+
+	@Override
+	public boolean insertContract(ContactBean contact) {
+		return dao.insertContact(contact);
+	}
+
+	@Override
+	public boolean deleteContact(long number, String name) {
+		return dao.deleteContact(number, name);
+	}
+
+	@Override
+	public boolean editContact(long number, String name) {
+		return dao.editContact(number, name);
+
+	}
+}
