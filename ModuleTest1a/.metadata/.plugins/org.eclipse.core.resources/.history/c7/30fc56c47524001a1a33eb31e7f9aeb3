@@ -1,0 +1,73 @@
+package com.capgemini.flipcart.controller;
+
+import java.util.Scanner;
+
+import com.capgemini.flipcart.bean.ProductBean;
+import com.capgemini.flipcart.factory.ProductFactory;
+import com.capgemini.flipcart.service.ProductService;
+
+public class ProductMain {
+	public static void main(String[] args) {
+		char ch2='y';
+		int choice=0;
+		
+
+		ProductService service=ProductFactory.intanceOfProductServiceImpl();
+		Scanner sc=new Scanner(System.in);
+		while(true)
+		{
+
+			System.out.println("Press 1 to show all Product");
+			System.out.println("Press 2 to Search Product");
+			
+			choice=sc.nextInt();
+			
+			switch(choice)
+			{	
+			case 1:
+				if(service.productDetails()!=null)
+				{
+					System.out.println(service.productDetails());
+				}
+				else
+				{
+					System.err.println("empty");
+				}
+				break;
+				
+			case 2:
+				ProductBean bean;
+				System.out.println("enter the ProductName"+bean.getProductName());
+				//System.out.println(productName);
+				//String productName=sc.next();
+//				ProductBean bean=service.searchProduct(productName);
+//				if(service.searchProduct(productName)!=null)
+//				{
+//					System.out.println("Press 1 to Buy");
+//					System.out.println("Press 2 to search again");
+//					System.out.println("Press 3 to Back to Menu");
+//					int choice=sc.nextInt();
+					switch(choice)
+					{
+					case 1:
+						System.out.println("Enter 16 digit Card Number");
+						
+						System.out.println("Enter 3 digit CVV");
+						break;
+					}
+			}
+
+//					case 2:
+//						System.out.println("Enter product to search"+bean.getProductName());
+//						break;	
+//					}
+//				}
+////				else
+//				{
+//					System.out.println("null");
+//				}
+				
+//				break;
+//		}
+				
+

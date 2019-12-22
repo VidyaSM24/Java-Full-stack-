@@ -1,0 +1,15 @@
+package com.capgemini.flipcart.bean;
+
+import java.io.Serializable;
+
+public class ProductBean implements Serializable {
+	private int productId;
+	private String productName;
+	private double productCost;
+	private String productColor;
+	private String description;
+	private int numOfProducts;
+	
+	
+
+}

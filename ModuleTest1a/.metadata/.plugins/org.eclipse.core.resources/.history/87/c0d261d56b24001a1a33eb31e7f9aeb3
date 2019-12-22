@@ -1,0 +1,5 @@
+package com.capgemini.flipcart.factory;
+
+public class ProductFactory {
+
+}
