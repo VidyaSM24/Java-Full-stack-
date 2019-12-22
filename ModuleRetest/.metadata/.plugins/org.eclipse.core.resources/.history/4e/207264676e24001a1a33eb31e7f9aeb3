@@ -1,5 +1,0 @@
-driverClass=com.mysql.jdbc.Driver
-url=jdbc:mysql://localhost:3306/ContactFile
-user=root
-password=root
-display=select * from Contact

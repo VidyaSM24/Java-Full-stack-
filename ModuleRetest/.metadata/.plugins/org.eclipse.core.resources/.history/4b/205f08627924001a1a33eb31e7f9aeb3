@@ -1,6 +1,0 @@
-driverClass=com.mysql.jdbc.Driver
-url=jdbc:mysql://localhost:3306/flipkart
-user=root
-password=root
-getall= select * from product_info 
-byname = select * from product_info where productName=?
