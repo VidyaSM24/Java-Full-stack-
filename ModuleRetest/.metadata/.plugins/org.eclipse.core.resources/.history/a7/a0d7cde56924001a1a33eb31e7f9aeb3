@@ -1,0 +1,38 @@
+package com.capgemini.flipcart.dao;
+
+import java.io.FileReader;
+import java.util.List;
+import java.util.Properties;
+
+import com.capgemini.flipcart.bean.ProductBean;
+
+public class ProductDaoImpl implements ProductDao{
+	FileReader reader;
+	Properties prop;
+	ProductBean bean;
+	
+	public ProductDaoImpl()
+	{
+		try {
+			reader = new FileReader("db.properties");
+			prop = new Properties();
+			prop.load(reader);
+			Class.forName(prop.getProperty("driverClass"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public List<ProductBean> productDetails() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ProductBean searchProduct(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

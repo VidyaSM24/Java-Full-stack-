@@ -1,0 +1,5 @@
+package com.capgemini.flipcart.dao;
+
+public class ProductDao {
+
+}
