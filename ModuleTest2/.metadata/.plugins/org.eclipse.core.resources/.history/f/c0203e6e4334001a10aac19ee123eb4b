@@ -1,0 +1,40 @@
+package com.capgemini.retailermaintenance.dao;
+
+import org.springframework.stereotype.Repository;
+
+import com.capgemini.retailermaintenance.dto.UserBean;
+@Repository
+public class UserDaoImpl implements UserDao{
+	
+
+	@Override
+	public boolean userLogin(String userEmail, String userPassword) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean profile(UserBean userBean) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean changePassword(int userId, String userPassword) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean getProducts(int productId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean orderProducts(int orderId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

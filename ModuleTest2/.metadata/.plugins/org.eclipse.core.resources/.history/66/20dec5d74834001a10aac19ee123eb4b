@@ -1,0 +1,17 @@
+package com.capgemini.retailermaintenance.dto;
+
+import java.util.List;
+
+import lombok.Data;
+
+@Data
+public class UserResponse {
+	private int statusCode;
+	private String message;
+	private String description;
+	//public void setUserBean(List<UserBean> asList) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

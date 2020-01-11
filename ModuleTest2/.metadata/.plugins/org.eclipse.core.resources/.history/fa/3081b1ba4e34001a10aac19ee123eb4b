@@ -1,0 +1,39 @@
+package com.capgemini.retailermaintenance.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.capgemini.retailermaintenance.dao.UserDao;
+import com.capgemini.retailermaintenance.dto.ProductBean;
+import com.capgemini.retailermaintenance.dto.UserBean;
+@Service
+public class UserServicesImpl implements UserServices{
+	@Autowired
+	private UserDao userDao;
+
+	@Override
+	public UserBean userLogin(String userEmail, String userPassword) {
+		return userDao.userLogin(userEmail, userPassword);	
+	}
+
+	@Override
+	public boolean profile(UserBean userBean) {
+		return userDao.profile(userBean);
+	}
+
+	@Override
+	public boolean changePassword(int userId, String userPassword) {
+		return userDao.changePassword(userId, userPassword);
+	}
+
+	@Override
+	public ProductBean getProducts(int productId) {
+		return userDao.getProducts(productId);
+	}
+
+	@Override
+	public boolean orderProducts(int orderId) {
+		return userDao.orderProducts(orderId);
+	}
+
+}

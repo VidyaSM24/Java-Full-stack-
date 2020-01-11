@@ -1,0 +1,31 @@
+package com.capgemini.retailermaintenance.dto;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name="ProductInfo")
+public class ProductBean {
+	@Id
+	@Column
+	@GeneratedValue
+	private int productId;
+	@Column
+	private int userId;
+	@Column(unique = true,nullable = false)
+	private String productName;
+	@Column
+	private double cost;
+	@Column
+	private int quantity;
+	@Column
+	private String details;
+	
+
+}
