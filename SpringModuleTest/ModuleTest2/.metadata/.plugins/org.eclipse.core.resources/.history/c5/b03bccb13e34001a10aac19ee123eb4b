@@ -1,0 +1,11 @@
+package com.capgemini.retailermaintenance.dto;
+
+public class ProductBean {
+	private int productId;
+	private int userId;
+	private String productName;
+	private int quantity;
+	private String details;
+	
+
+}

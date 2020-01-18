@@ -1,0 +1,13 @@
+package com.capgemini.retailermaintenance.dao;
+
+public interface OrderDao {
+	
+	
+	
+//	public EmployeeBean auth(String email,String password);
+//	public boolean register(EmployeeBean bean);
+//	public List<EmployeeBean> getEmployees(String key);
+//	public boolean changePassword(int id,String password);
+//public boolean deleteEmployee(int id);
+
+}

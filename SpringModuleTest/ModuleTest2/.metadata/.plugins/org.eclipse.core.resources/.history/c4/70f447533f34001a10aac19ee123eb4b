@@ -1,0 +1,8 @@
+package com.capgemini.retailermaintenance.dto;
+
+public class OrderBean {
+	private int id;
+	private int productId;
+	private int userId;
+
+}

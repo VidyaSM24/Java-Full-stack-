@@ -1,0 +1,15 @@
+package com.capgemini.retailermaintenance.dao;
+
+import com.capgemini.retailermaintenance.dto.UserBean;
+
+public interface UserDao {
+	
+	public boolean userLogin(String userEmail,String userPassword);
+	public boolean profile(UserBean userBean);
+	public boolean changePassword(int userId,String userPassword);
+	public boolean getProducts(int productId);
+	public boolean orderProducts(int orderId);
+	
+/
+
+}

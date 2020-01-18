@@ -1,0 +1,19 @@
+package com.capgemini.retailermaintenance.dto;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name="product_info")
+public class ProductBean {
+	private int productId;
+	private int userId;
+	private String productName;
+	private int quantity;
+	private String details;
+	
+
+}

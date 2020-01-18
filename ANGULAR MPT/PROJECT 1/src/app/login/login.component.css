@@ -1,0 +1,19 @@
+
+body{
+   
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+	}
+	#prof{
+    height: 250px;
+    width: 150px;
+    border: 2px solid green;
+    padding: 100px;
+    margin: 50px 400px;
+}
+    
+   
+	.img {
+border-radius:10px;
+	
+	}

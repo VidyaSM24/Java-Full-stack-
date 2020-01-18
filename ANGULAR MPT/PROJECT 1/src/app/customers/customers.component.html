@@ -1,0 +1,20 @@
+<div class="container mt-3">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Customer No</th>
+                <th>Customer Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let customer of customers; index as i' appColor>
+                <td appColor>{{i+1}}</td>
+                <td>{{customer.name}}</td>
+                <td>{{customer.email}}</td>
+                <td>{{customer.phone}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

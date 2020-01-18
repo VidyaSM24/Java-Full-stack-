@@ -1,0 +1,8 @@
+package com.capgemini.retailermaintenance.dto;
+
+public class UserResponse {
+	private int statusCode;
+	private String message;
+	private String description;
+
+}

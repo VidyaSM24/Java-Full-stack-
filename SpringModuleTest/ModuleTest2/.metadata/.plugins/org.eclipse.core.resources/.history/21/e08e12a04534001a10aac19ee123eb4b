@@ -1,0 +1,73 @@
+package com.capgemini.retailermaintenance.dao;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
+import javax.persistence.TypedQuery;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Repository;
+
+import com.capgemini.retailermaintenance.dto.ProductBean;
+import com.capgemini.retailermaintenance.dto.UserBean;
+import com.capgemini.retailermaintenance.exceptions.Exceptions;
+@Repository
+public class UserDaoImpl implements UserDao{
+	@PersistenceUnit
+	private EntityManagerFactory entityManagerFactory;
+
+	@Override
+	public UserBean userLogin(String userEmail, String userPassword) {
+		EntityManager manager = entityManagerFactory.createEntityManager();
+		String jpql= "from UserBean where email=:email ";
+		TypedQuery <UserBean> query= manager.createQuery(jpql,UserBean.class);
+		query.setParameter("email", userEmail);
+		query.setParameter("password", userPassword);
+		try {
+		UserBean userBean =query.getSingleResult();
+		BCryptPasswordEncoder encoder= new BCryptPasswordEncoder();
+		if(encoder.matches(userPassword, userBean.getUserPassword())) {
+			return userBean;
+		}else {
+			
+			throw new Exceptions("password Invalid");
+		}
+		}catch (Exception e) {
+			throw new Exceptions("email invalid");
+	}
+	}
+
+	@Override
+	public boolean profile(UserBean userBean) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean changePassword(int userId, String userPassword) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public ProductBean getProducts(int productId) {
+		String jpql="from ProductBean where productId=:productId";
+		EntityManager manager=entityManagerFactory.createEntityManager();
+		TypedQuery<ProductBean> query = manager.createQuery(jpql,ProductBean.class);
+        query.setParameter("productId", productId);
+		try {
+			return query.getSingleResult();
+		}catch (Exception e) {
+		e.printStackTrace();
+			return null;
+	}
+//	}
+	}
+
+	@Override
+	public boolean orderProducts(int orderId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}
