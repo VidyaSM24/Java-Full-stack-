@@ -1,0 +1,43 @@
+<div class="container offset-3" style="margin-top: 60px;">
+    <div class="col-md-10 float-left">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Index</th>
+                    <th>contactId</th>
+                    <th>firstName</th>
+                    <th>lastName</th>
+                    <th>emailId</th>
+                    <th>comment</th>
+                    <th>Delete</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let mail of mails ; index as i'>
+                    <td>{{i+1}}</td>
+                    <td>{{mail.contactId}}</td>
+                    <td>{{mail.firstName}}</td>
+                    <td>{{mail.lastName}}</td>
+                    <td>{{mail.emailId}}</td>
+                    <td>{{mail.comment}}</td>
+
+
+
+                    <td>
+
+                        <button class="btn btn-outline-dark float-right" (click)='deleteMail(mail)'>Delete</button>
+
+                    </td>
+                    <!-- <td>
+                        <button class="btn btn-outline-info float-right" (click)='selectAvailability(availability)'>Edit</button>
+                    </td>  -->
+                </tr>
+
+
+            </tbody>
+
+        </table>
+
+    </div>
+</div>

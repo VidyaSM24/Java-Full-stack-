@@ -1,0 +1,17 @@
+.abc{
+    height: 150px;
+    width: 100%;
+    background-color: #e9f5fa;
+   
+}
+.btn{
+    background-color: #a01f62;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+    
+}
+h4{
+    color: black;
+    margin-left: 75%;
+}

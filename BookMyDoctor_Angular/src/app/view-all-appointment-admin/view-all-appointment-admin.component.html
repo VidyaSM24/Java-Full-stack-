@@ -1,0 +1,44 @@
+<div class="container offset-3" style="margin-top: 60px;">
+    <div class="col-md-10 float-left">
+        <table class="table table-bordered table-hover">
+            <thead style="background-color: rgb(235, 227, 234);">
+                <tr>
+                    <th>Index</th>
+                    <th>Appointment Id</th>
+                    <th>PatientId</th>
+                    <th>DoctorId</th>
+                    <th>AppointmentDate</th>
+                    <th>AppointmentTime</th>
+                    <th>AppointmentStatus</th>
+
+                    <!-- <th>Delete</th> -->
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let appointment of appointments; index as i'>
+                    <td>{{i+1}}</td>
+                    <td>{{appointment.appointmentId}}</td>
+                    <td>{{appointment.patientId}}</td>
+                    <td>{{appointment.doctorId}}</td>
+                    <td>{{appointment.appointmentDate}}</td>
+                    <td>{{appointment.appointmentTime}}</td>
+                    <td>{{appointment.appointmentStatus}}</td>
+
+                    <!-- <td>
+
+                        <button class=" btn btn-outline-dark float-right " (click)='deleteAppointment(appointment)'>Delete</button>
+
+                    </td> -->
+                    <td>
+                        <button class="btn btn-outline-info float-right " (click)='selectAppointment(appointment)'>Edit</button>
+                    </td>
+                </tr>
+
+
+            </tbody>
+
+        </table>
+
+    </div>
+</div>

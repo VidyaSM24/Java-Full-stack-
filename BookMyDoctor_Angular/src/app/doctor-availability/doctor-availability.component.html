@@ -1,0 +1,20 @@
+<!-- <input type="search" name="search" placeholder="Search by patient Firstname" class="form-control col-md-4 offset-4 mb-3" style="margin-top: 40px;" [(ngModel)]='search'> -->
+
+
+<div class="container" style="margin-left: 300px;margin-top: 50px ">
+    <div class="row">
+        <div class="card mt-2 float-left" style="width:20rem ; margin-right: 25px;; " *ngFor='let patient of patients | filterPatient ; index as i '>
+            <div class="card-body">
+                <h4 class="card-title " style="color: cadetblue;">Patient Profile</h4>
+                <h6>Patient Id: {{patient.patientId}} </h6>
+                <h6>Patient Name: {{patient.patientFirstName}} </h6>
+                <h6>Patient Last Name : {{patient.patientLastName}}</h6>
+                <h6>Email Id : {{patient.patientEmail}}</h6>
+                <h6>Phone No : {{patient.phoneNo}} </h6>
+                <h6>Gender : {{patient.gender}}</h6>
+                <h6>Address : {{patient.address}}</h6>
+                <h6>Health Issue : {{patient.healthIssue}}</h6>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="card col-md-4 offset-4" style="width: 25rem;height: 15rem; margin-top: 80px;height: 400px; ">
+    <div class="card-body mt-4" style="margin-left: 70px;" *ngFor="let patient of patients ">
+        <h1 class="card-title" style="color: cadetblue;">Patient Profile</h1><br>
+        <p style="font-size: 18px;">Patient Name: {{patient.patientFirstName}} {{patient.patientLastName}}</p>
+        <p style="font-size: 18px;">Email Id : {{patient.patientEmail}}</p>
+        <p style="font-size: 18px;">Phone No : {{patient.phoneNo}} </p>
+        <p style="font-size: 18px;">Gender : {{patient.gender}}</p>
+        <p style="font-size: 18px;">Address : {{patient.address}}</p>
+
+    </div>
+</div>

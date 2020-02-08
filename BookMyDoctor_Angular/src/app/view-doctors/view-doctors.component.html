@@ -1,0 +1,25 @@
+<!-- <input type="search" name="search" placeholder="Search by doctor Specialization" class="form-control col-md-4 offset-4 mb-3"
+ style="margin-top: 40px;" [(ngModel)]='search'> -->
+
+ <input type="search" name="search" placeholder="Search by Doctor Specialization" 
+class="form-control col-md-4 offset-4 mb-3" style="margin-top: 40px;" #search (keyup)='searchData(search)'>
+
+<div class="container" style="margin-left: 300px; ">
+    <div class="row">
+        <div class="card mt-2 float-left" style="width:20rem ; margin-right: 25px; " 
+        *ngFor='let doctor of doctors | filterDoctor: search.value'>
+            <div class="card-body">
+                <h4 class="card-title" style="color: cadetblue;">Doctor Profile</h4>
+                <h6>Doctor Id; : {{doctor.doctorId}}</h6>
+                <h6>Doctor Name :{{doctor.firstName}} {{doctor.lastName}}</h6>
+                <h6>Email Id : {{doctor.doctorEmail}} </h6>
+                <h6>Ratings : {{doctor.ratings}}</h6>
+                <h6>Specialization : {{doctor.specialization}}</h6>
+                <h6>Clinic Name: {{doctor.clinicName}}</h6>
+                <!-- <button class="btn btn-outline-info float-right btn-block " (click)='bookAppointment(doctor) '>Book Appointment</button>
+                <button class="btn btn-outline-success float-right btn-block" (click)='addRatings(doctor) '>Give Rating</button> -->
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<div class="alert alert-success" *ngIf='description'>
+    {{description}}</div>
+<div class="alert alert-danger" *ngIf='error'>
+    {{error}}</div>
+
+
+<div class="card col-md-4 mt-5 offset-4" style="height: 500px;">
+
+    <div class="card-body">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTLLE3CWffTiG3Ug-VI8x4z46ME7BJGgJSbbilgOZR52liXF9ae" alt="" class="rounded-circle" class="center">
+
+        <h4 class="h1 text-center" style="font-size: 30px; color: rgb(6, 6, 82);">Please Update Your Password Here!!</h4>
+        <br>
+        <form #updateForm='ngForm' (ngSubmit)='updateUser(updateForm)'>
+
+
+            <div class="form-group">
+                <!-- <label for="userName">Doctor Name</label> -->
+                <input type="hidden" name="userName" id="userName" #userName='ngModel' [(ngModel)]='userName1' class="form-control" required pattern="^[a-zA-Z]+(?: [a-zA-Z]+)*$" minlength="2" maxlength="20" placeholder="Enter User Name">
+                <div class="text-danger" *ngIf='(userName.dirty || userName.touched) && userName.invalid'>
+                    <div *ngIf='userName.errors.required'>
+                        *This field is mandatory
+                    </div>
+                    <div *ngIf='userName.errors.minlength'>
+                        *minimum 2 letters mandatory
+                    </div>
+                    <div *ngIf='userName.errors.pattern'>
+                        *only characters are allowed
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <!-- <label for="hidden">Doctor Email</label> -->
+                <input type="hidden" name="userEmail" id="userEmail" #userEmail='ngModel' [(ngModel)]='userEmail1' class="form-control" required placeholder="Enter Email Id" pattern="^[a-z0-9_+&*-]+(?:\.[a-z0-9_+&*-]+)*@(?:[a-z0-9-]+\.)+[a-z]{2,7}$">
+                <div class="text-danger" *ngIf='(userEmail.dirty || userEmail.touched) && userEmail.invalid'>
+                    <div *ngIf='userEmail.errors.required'>
+                        *This field is mandatory
+                    </div>
+                    <div *ngIf='userEmail.errors.pattern'>
+                        *Invalid Email pattern, Please enter valid email. For ex: mail@gmail.com
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="userPassword">Password</label>
+                <input type="text" name="userPassword" id="userPassword" #userPassword='ngModel' ngModel class="form-control" required placeholder="Enter Password" pattern="^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8,20}$" minlength="8" maxlength="20">
+                <div class="text-danger" *ngIf='(userPassword.dirty || userPassword.touched) && userPassword.invalid'>
+                    <div *ngIf='userPassword.errors.required'>
+                        *This field is mandatory
+                    </div>
+                    <div *ngIf='userPassword.errors.minlength'>
+                        *minimum 2 letters mandatory
+                    </div>
+                    <div *ngIf='userPassword.errors.pattern'>
+                        *userPassword Should have minimum 8 and maximum 20 characters, and should have minimum 1 lower case, 1 upper case alphabate and 1 special character(!@#$&*)....!
+                    </div>
+                </div>
+            </div><br>
+
+            <button type="submit" class="btn btn-info btn-block float-right">
+                    Update Password
+                </button>
+        </form>
+
+    </div>
+</div>

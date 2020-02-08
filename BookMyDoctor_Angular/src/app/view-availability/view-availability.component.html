@@ -1,0 +1,43 @@
+<div class="container offset-3" style="margin-top: 60px;">
+    <div class="col-md-10 float-left">
+        <table class="table table-bordered table-hover">
+            <thead style="background-color: rgb(235, 227, 234);">
+                <tr>
+                    <th>Index</th>
+                    <th>AvailabilityId</th>
+                    <th>DoctorId</th>
+                    <th>FromDate</th>
+                    <th>ToDate</th>
+                    <th>Availability</th>
+                    <!-- <th>Delete</th> -->
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let availability of availabilities ; index as i'>
+                    <td>{{i+1}}</td>
+                    <td>{{availability.availabilityId}}</td>
+                    <td>{{availability.doctorId}}</td>
+                    <td>{{availability.fromDate}}</td>
+                    <td>{{availability.toDate}}</td>
+                    <td>{{availability.availability}}</td>
+
+
+
+                    <!-- < <td>
+
+                        <button class="btn btn-outline-dark float-right" (click)='deleteAvailability(availability)'>Delete</button>
+
+                    </td> -->
+                    <td>
+                        <button class="btn btn-outline-info float-right" (click)='selectAvailability(availability)'>Edit</button>
+                    </td> 
+                </tr>
+
+
+            </tbody>
+
+        </table>
+
+    </div>
+</div>

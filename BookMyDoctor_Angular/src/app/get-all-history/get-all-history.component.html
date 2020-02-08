@@ -1,0 +1,33 @@
+<div class="alert alert-danger" *ngIf='failure'>
+    {{failure}}</div>
+
+
+<div class="container mt-3 offset-2">
+    <table class="table table-bordered table-hover">
+        <thead style="background-color: rgb(235, 227, 234);">
+            <tr>
+                <th>History Id</th>
+                <th>Event Subject</th>
+                <th>Subject Person</th>
+                <th>Event Object</th>
+                <th>Operation</th>
+                <th>Date & Time</th>
+                <th>Delete</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let history of historyDetail'>
+                <td>{{history.historyId}}</td>
+                <td>{{history.eventById}}</td>
+                <td>{{history.eventByName}}</td>
+                <td>{{history.eventFor}}</td>
+                <td>{{history.operation}}</td>
+                <td>{{history.dateAndTime}}</td>
+                <td><button class="btn btn-outline-dark" (click)='deleteHistory(history)'>X</button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

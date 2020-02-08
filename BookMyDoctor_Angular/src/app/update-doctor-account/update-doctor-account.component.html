@@ -1,0 +1,133 @@
+<div class='col-md-6 offset-3'>
+    <div class="alert alert-success" *ngIf='message'>{{message}}</div>
+    <div class="alert alert-danger" *ngIf='error'>{{error}}</div>
+    <div class=" card col-md-8 mt-4" style='margin: auto;'>
+        <div class="card-body">
+            <h4 class="text-center">Edit Doctor Details!!</h4><br>
+            <form #updateDoctorForm='ngForm' (ngSubmit)='updateDoctor(updateDoctorForm)'>
+
+                <div clas="form-group">
+                    <label for="doctorId">Doctor Id</label>
+                    <input type="text" name="doctorId" id="doctorId" #doctorId='ngModel' [(ngModel)]='doctorId1' required class="form-control" minlength="2" maxlength="5" required placeholder="Enter Doctor Id ">
+
+                    <div class="text-danger" *ngIf='(doctorId.dirty || doctorId.touched) && doctorId.invalid'>
+                        <div *ngIf='doctorId.errors.required'>
+                            *This field is mandatory
+                        </div>
+                        <div *ngIf='doctorId.errors.minlength'>
+                            *minimum 2 number and maximum 5 number
+                        </div>
+                    </div>
+                </div>
+
+
+                <div clas="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" name="firstName" id="firstName" #firstName='ngModel' ngModel required class="form-control" pattern="^[a-zA-Z]+(?: [a-zA-Z]+)*$" minlength="2" maxlength="20" required placeholder="Enter First Name">
+
+                    <div class="text-danger" *ngIf='(firstName.dirty || firstName.touched) && firstName.invalid'>
+                        <div *ngIf='firstName.errors.required'>
+                            *This field is mandatory
+                        </div>
+                        <div *ngIf='firstName.errors.minlength'>
+                            *minimum 2 letters mandatory
+                        </div>
+                        <div *ngIf='firstName.errors.pattern'>
+                            *only alphabets are allowed
+                        </div>
+                    </div>
+                </div>
+                <div clas="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" name="lastName" id="lastName" #lastName='ngModel' ngModel required class="form-control" pattern="^[a-zA-Z]+(?: [a-zA-Z]+)*$" minlength="2" maxlength="20" required placeholder="Enter Last Name">
+
+                    <div class="text-danger" *ngIf='(lastName.dirty || lastName.touched) && lastName.invalid'>
+                        <div *ngIf='lastName.errors.required'>
+                            *This field is mandatory
+                        </div>
+                        <div *ngIf='lastName.errors.minlength'>
+                            *minimum 2 letters mandatory
+                        </div>
+                        <div *ngIf='lastName.errors.pattern'>
+                            *only alphabets are allowed
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="doctorEmail"> Email Id</label>
+                    <input type="text" name="doctorEmail" id="doctorEmail" #doctorEmail='ngModel' [(ngModel)]='doctorEmail1' class="form-control" required placeholder="Enter Email Id" pattern="^[a-z0-9_+&*-]+(?:\.[a-z0-9_+&*-]+)*@(?:[a-z0-9-]+\.)+[a-z]{2,7}$">
+
+                    <div class="text-danger" *ngIf='(doctorEmail.dirty || doctorEmail.touched) && doctorEmail.invalid'>
+                        <div *ngIf='doctorEmail.errors.required'>
+                            *This field is mandatory
+                        </div>
+
+                        <div *ngIf='doctorEmail.errors.pattern'>
+                            *Invalid Email pattern, Please enter valid email. For ex: mail@gmail.com
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="form-group">
+                    <input type="hidden" name="ratings" id="ratings" #ratings='ngModel' ngModel class="form-control" required pattern="[1-5]" maxlength="1">
+
+                    <div class="text-danger" *ngIf='(ratings.dirty || ratings.touched) && ratings.invalid'>
+                        <div *ngIf='ratings.errors.required'>
+                            *This field is mandatory
+                        </div>
+
+                        <div *ngIf='ratings.errors.pattern'>
+                            *Please Enter only number(From 1 to 5)
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label>Specialization*</label><br>
+                    <select id="myList" name="specialization" #specialization='ngModel' ngModel class="form-control">
+                            
+                            <option value="Ayurveda">Ayurveda</option>
+                            <option value="Cardiologist">Cardiologist</option>
+                            <option value="Dentist">Dentist</option>
+                            <option value="Dermatologist">Dermatologist</option>
+                            <option value="GeneralPhysician">General Physician</option>
+                            <option value="GeneralSurgeon">General Surgeon</option>
+                            <option value="Homeopathy">Homeopathy</option>
+                            <option value="InternalMedician">Internal Medician</option>
+                            <option value="Gynecologist">Gynecologist</option>
+                            <option value="Orthopedist">Orthopedist</option>
+                            <option value="Pediatrician">Pediatrician</option>
+                            <option value="Physiotherapist">Physiotherapist</option>
+                        </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="clinicName">Clinic Name</label>
+                    <input type="text" name="clinicName" id="clinicName" #clinicName='ngModel' [(ngModel)]='clinicName1' class="form-control" minlength="2" maxlength="20" required placeholder="Enter Clinic Name">
+
+                    <div class="text-danger" *ngIf='(clinicName.dirty || clinicName.touched) && clinicName.invalid'>
+                        <div *ngIf='clinicName.errors.required'>
+                            *This field is mandatory
+                        </div>
+                        <div *ngIf='clinicName.errors.minlength'>
+                            *minimum 2 letters mandatory
+                        </div>
+                        <div *ngIf='clinicName.errors.pattern'>
+                            *only alphabets are allowed
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <button type="submit" class="btn btn-outline-info float-right">Edit
+                    Details</button>
+            </form>
+        </div>
+    </div>
+</div>

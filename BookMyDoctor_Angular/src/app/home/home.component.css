@@ -1,0 +1,50 @@
+.img {
+    background-image: url("../../assets/img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-text {
+    margin-left: 50%;
+}
+
+.a1 {
+    margin-left: 10%;
+    color: #a01f62;
+    font-style: italic;
+    font-size: 26px;
+}
+
+.a2 {
+    margin-left: 10%;
+    color: #a01f62;
+    font-size: 30px;
+    font-style: italic;
+}
+
+.a4 {
+    margin-left: 10%;
+    color: #646464;
+    font-size: 26px;
+}
+
+.card-title {
+    color: #a01f62;
+}
+
+.btn {
+    background-color: #a01f62;
+    color: white;
+    font-weight: bold;
+}
+
+.footer {
+    height: 200px;
+    width: 100%;
+    background-color: #a01f62;
+}
+
+.content {
+    height: 280px;
+    width: 100%;
+}

@@ -1,0 +1,39 @@
+.navbar {
+    background-color: #f3f3f3;
+    position: relative;
+}
+
+a {
+    color: #a01f62;
+    font-weight: bold;
+}
+
+.signup {
+    margin-left: 80%;
+    margin-top: -60px;
+}
+
+.a5 {
+    color: #a01f62;
+    font-size: 20px;
+    margin-top: -90px;
+}
+
+.img {
+    background-image: url(../../assets/img.jpg);
+}
+
+.a1 {
+    margin-left: 10%;
+    color: #a01f62;
+}
+
+.a2 {
+    margin-left: 10%;
+    color: #a01f62;
+}
+
+.container {
+    padding-left: -80%;
+    margin-left: -20px;
+}

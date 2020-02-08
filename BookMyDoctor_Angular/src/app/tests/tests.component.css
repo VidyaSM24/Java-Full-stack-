@@ -1,0 +1,63 @@
+.img {
+    background-image: url("../../assets/a.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1400px;
+}
+
+h3 {
+    color: #a01f62;
+}
+
+.card-title {
+    color: #a01f62;
+}
+
+.a1 {
+    margin-top: 50px;
+    margin-left: 10%;
+}
+
+.footer {
+    height: 30px;
+    width: 100%;
+    background-color: #a01f62;
+}
+
+.health {
+    height: 500;
+    width: 100%;
+    background-color: white;
+}
+
+h2 {
+    margin-top: 5%;
+    color: #a01f62;
+}
+
+.name {
+    width: 100%;
+    margin-left: 58%;
+    color: #a01f62;
+    font-weight: bold;
+}
+
+h1 {
+    color: #a01f62;
+}
+
+.he {
+    font-weight: bold;
+    color: black;
+}
+
+.te {
+    font-size: 14px;
+    color: rebeccapurple;
+}
+
+.btn {
+    background-color: #a01f62;
+    color: white;
+    font-weight: bold;
+}

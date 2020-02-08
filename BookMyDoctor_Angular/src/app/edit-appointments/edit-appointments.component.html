@@ -1,0 +1,101 @@
+<div class='col-md-6 float-left'>
+    <div class="alert alert-success" *ngIf='message'>{{message}}</div>
+    <div class="alert alert-danger" *ngIf='error'>{{error}}</div>
+    <div class=" card col-md-8 offset-8" style="margin-top: 50px;">
+        <div class="card-body">
+            <h4 class="text-center">Update Appointment Details!!</h4><br>
+            <form #updateAppointmentForm='ngForm' (ngSubmit)='updateAppointment(updateAppointmentForm)'>
+
+                <div clas="form-group">
+
+                    <input type="hidden" name="appointmentId" id="appointmentId" #appointmentId='ngModel' [(ngModel)]='appointmentId1' class="form-control" required placeholder="Enter Patient Id" min="1" maxlength="10" pattern="^[1-9]+[0-9]*$">
+
+                    <div class="text-danger" *ngIf='(appointmentId.dirty || appointmentId.touched) && appointmentId.invalid'>
+                        <div *ngIf='appointmentId.errors.required'>
+                            *This field is mandatory
+                        </div>
+                        <div *ngIf='appointmentId.errors.pattern'>
+                            *Only valid numbers are allowed
+                        </div>
+                        <div *ngIf='appointmentId.errors.min'>
+                            *Don't enter 0
+                        </div>
+                    </div>
+                </div>
+                <!-- <div clas="form-group">
+
+                    <input type="hidden" name="patientId" id="patientId" #patientId='ngModel' [(ngModel)]='patientId1' class="form-control" required placeholder="Enter Patient Id" min="1" maxlength="10" pattern="^[1-9]+[0-9]*$">
+
+                    <div class="text-danger" *ngIf='(patientId.dirty || patientId.touched) && patientId.invalid'>
+                        <div *ngIf='patientId.errors.required'>
+                            *This field is mandatory
+                        </div>
+                        <div *ngIf='patientId.errors.pattern'>
+                            *Only valid numbers are allowed
+                        </div>
+                        <div *ngIf='patientId.errors.min'>
+                            *Don't enter 0
+                        </div>
+                    </div>
+                </div>
+                <div clas="form-group">
+
+                    <input type="hidden" name="doctorId" id="doctorId" #doctorId='ngModel' [(ngModel)]='doctorId1' class="form-control" required placeholder="Enter DoctorId Id" min="1" maxlength="10" pattern="^[1-9]+[0-9]*$">
+
+                    <div class="text-danger" *ngIf='(doctorId.dirty || doctorId.touched) && doctorId.invalid'>
+                        <div *ngIf='doctorId.errors.required'>
+                            *This field is mandatory
+                        </div>
+                        <div *ngIf='doctorId.errors.pattern'>
+                            *Only valid numbers are allowed
+                        </div>
+                        <div *ngIf='doctorId.errors.min'>
+                            *Don't enter 0
+                        </div>
+                    </div> 
+        </div>-->
+                <div clas="form-group">
+                    <label for="appointmentDate">Appointment Date</label>
+                    <input type="date" name="appointmentDate" id="appointmentDate" #appointmentDate='ngModel' [(ngModel)]='appointmentDate1' class="form-control" required min="{{today}}">
+                    <div class="appointmentDate" *ngIf='(appointmentDate.dirty || appointmentDate.touched) && appointmentDate.invalid'>
+                        <div *ngIf='appointmentDate.errors.required'>
+                            *This field is mandatory
+                        </div>
+                    </div>
+
+
+                </div>
+                <div clas="form-group">
+                    <label for="appointmentTime">Appointment Time</label>
+                    <input type="text" name="appointmentTime" id="appointmentTime" #appointmentTime='ngModel' [(ngModel)]='appointmentTime1' required class="form-control" pattern="[a-zA-Z]+">
+
+                    <div *ngIf='appointmentTime.invalid && appointmentTime.touched'>
+                        <div class=" alert alert-danger " *ngIf='appointmentTime.errors.pattern'>
+                            *This field takes only Alphabets
+                        </div>
+                    </div>
+
+                </div>
+                <div clas="form-group">
+                    <label for="appointmentStatus">Appointment Status</label>
+                    <select id="appointmentStatus" name="appointmentStatus" #appointmentStatus='ngModel' [(ngModel)]='appointmentStatus1' class="form-control" required>
+                        <option value="Approved"> Approve</option>
+                        <option value="Rejected"> Reject</option>
+                        <option value="Pending"> Pending</option>
+                </select>
+                    <div class="validationText" *ngIf='(appointmentStatus.dirty || appointmentStatus.touched) && appointmentStatus.invalid'>
+                        <div *ngIf='appointmentStatus.errors.required'>
+                            *This field is mandatory
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+                <button type="submit" class="btn btn-outline-info float-right">Update Appointment</button>
+            </form>
+
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="alert alert-success" *ngIf='success'>
+    {{success}}</div>
+<div class="alert alert-danger" *ngIf='failure'>
+    {{failure}}</div>
+
+
+<div class="background" style="margin-top: -50px;"><br><br><br>
+    <div class="card col-md-4 " style="margin-top: 50px;margin-left: 65%;width: 450px;">
+
+        <div class="card-body">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTLLE3CWffTiG3Ug-VI8x4z46ME7BJGgJSbbilgOZR52liXF9ae" alt="" class="rounded-circle" class="center">
+
+
+            <h1 class="h1 text-center" style="color: rgb(6, 6, 82);">LOGIN</h1>
+
+            <form #loginSubmit='ngForm' (ngSubmit)='loginUser(loginSubmit)'>
+                <div class="form-group">
+                    <label for="userEmail">User Email Id</label>
+                    <input type="text" name="userEmail" id="userEmail" value="userEmail" #userEmail='ngModel' ngModel class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="userPassword">Password</label>
+                    <input type="password" name="userPassword" id="userPassword" value="userPassword" #userPassword='ngModel' ngModel class="form-control" required>
+                </div>
+
+                <!-- <a href="/change-password">
+                    <p>Forgot Password</p>
+                </a> -->
+
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary float-right ">
+                    Login
+                </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+<div class="alert alert-success" *ngIf='message'>
+    {{message}}</div>
+<div class="alert alert-danger" *ngIf='error'>{{error}}</div>
+<div class=" card col-md-4 offset-4" style="margin-top: 50px;">
+    <div class="card-body">
+        <h4 class="text-center">Update Availability Here!!</h4><br>
+        <form #updateAvailabilityForm='ngForm' (ngSubmit)='updateAvailability(updateAvailabilityForm)'>
+
+            <div clas="form-group">
+                <!-- <label for="patientId">Patient Id</label> -->
+                <input type="hidden" name="availabilityId" id="availabilityId" #availabilityId='ngModel' [(ngModel)]='availabilityId1' class="form-control" required placeholder="Enter availabilityId" min="1" maxlength="10" pattern="^[1-9]+[0-9]*$">
+
+                <div class="text-danger" *ngIf='(availabilityId.dirty || availabilityId.touched) && availabilityId.invalid'>
+                    <div *ngIf='availabilityId.errors.required'>
+                        *This field is mandatory
+                    </div>
+                    <div *ngIf='availabilityId.errors.pattern'>
+                        *Only valid numbers are allowed
+                    </div>
+                    <div *ngIf='availabilityId.errors.min'>
+                        *Don't enter 0
+                    </div>
+                </div>
+            </div>
+            <div clas="form-group">
+                <!-- <label for="doctorId">Doctor Id</label> -->
+                <input type="hidden" name="doctorId" id="doctorId" #doctorId='ngModel' [(ngModel)]='doctorId1' class="form-control" required placeholder="Enter DoctorId Id" min="1" maxlength="10" pattern="^[1-9]+[0-9]*$">
+
+                <div class="text-danger" *ngIf='(doctorId.dirty || doctorId.touched) && doctorId.invalid'>
+                    <div *ngIf='doctorId.errors.required'>
+                        *This field is mandatory
+                    </div>
+                    <div *ngIf='doctorId.errors.pattern'>
+                        *Only valid numbers are allowed
+                    </div>
+                    <div *ngIf='doctorId.errors.min'>
+                        *Don't enter 0
+                    </div>
+                </div>
+
+            </div>
+            <div clas="form-group">
+                <label for="fromDate">fromDate</label>
+                <input type="date" name="fromDate" id="fromDate" #fromDate='ngModel' [(ngModel)]='fromDate1' class="form-control" required min='{{today | date : "yyyy-MM-dd"}}'>
+
+                <div class="text-danger" *ngIf='(fromDate.dirty || fromDate.touched) && fromDate.invalid'>
+                    <div *ngIf='fromDate.errors.required'>
+                        *This field is mandatory
+                    </div>
+
+                    <div *ngIf='fromDate.errors.pattern'>
+                        *Please Enter only number(From 1 to 5)
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div clas="form-group">
+                <label for="toDate">Feedback</label>
+                <input type="date" name="toDate" id="toDate" #toDate='ngModel' [(ngModel)]='toDate1' class="form-control" min='{{today | date : "yyyy-MM-dd"}}' required  >
+
+                <div class="text-danger" *ngIf='(toDate.dirty || toDate.touched) && toDate.invalid'>
+                    <div *ngIf='toDate.errors.required'>
+                        *This field is mandatory
+                    </div>
+                    <div *ngIf='toDate.errors.minlength'>
+                        *minimum 2 letters mandatory
+                    </div>
+                    <div *ngIf='toDate.errors.pattern'>
+                        *only alphabets are allowed
+                    </div>
+                </div>
+
+            </div>
+            <div clas="form-group">
+                <label for="availability">Feedback</label>
+                <input type="text" name="availability" id="availability" #availability='ngModel' [(ngModel)]='availability1' class="form-control" pattern="^[a-zA-Z]+(?: [a-zA-Z]+)*$" minlength="2" maxlength="20" required placeholder="Enter Feedback">
+
+                <div class="text-danger" *ngIf='(availability.dirty || availability.touched) && availability.invalid'>
+                    <div *ngIf='availability.errors.required'>
+                        *This field is mandatory
+                    </div>
+                    <div *ngIf='availability.errors.minlength'>
+                        *minimum 2 letters mandatory
+                    </div>
+                    <div *ngIf='availability.errors.pattern'>
+                        *only alphabets are allowed
+                    </div>
+                </div>
+
+            </div>
+
+            <br>
+            <button type="submit" class="btn btn-outline-info float-right">Update Availability</button>
+        </form>
+
+
+    </div>
+
+</div>

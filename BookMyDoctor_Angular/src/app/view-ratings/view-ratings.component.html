@@ -1,0 +1,42 @@
+<div class="container offset-3" style="margin-top: 60px;">
+    <div class="col-md-10 float-left">
+        <table class="table table-bordered table-hover">
+            <thead style="background-color: rgb(235, 227, 234);">
+                <tr>
+                    <th>Index</th>
+                    <th>Rating Id</th>
+                    <th>Patient Id</th>
+                    <th>Doctor Id</th>
+                    <th>Ratings</th>
+                    <th>Feedback</th>
+                    <!-- <th>Delete</th>
+                    <th>Edit</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let rating of ratings ; index as i'>
+                    <td>{{i+1}}</td>
+                    <td>{{rating.ratingId}}</td>
+                    <td>{{rating.patientId}}</td>
+                    <td>{{rating.doctorId}}</td>
+                    <td>{{rating.ratings}}</td>
+                    <td>{{rating.feedback }}</td>
+
+
+                    <!-- <td>
+
+                        <button class="btn btn-outline-dark float-right" (click)='deleteRating(rating)'>Delete</button>
+
+                    </td>
+                    <td>
+                        <button class="btn btn-outline-info float-right" (click)='selectRating(rating)'>Edit</button>
+                    </td> -->
+                </tr>
+
+
+            </tbody>
+
+        </table>
+
+    </div>
+</div>

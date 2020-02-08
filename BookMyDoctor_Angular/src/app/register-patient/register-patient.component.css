@@ -1,0 +1,30 @@
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+
+/* h4 {
+    text-shadow: 2px 2px 5px navy;
+} */
+
+
+/* .card-body {
+    width: 500px;
+    height: 550px;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 10px 10px 5px grey;
+} */
+
+div.card {
+    box-shadow: 0 4px 8px 0 rgba(65, 64, 64, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+    height: 700px;
+}
+
+.jumbotron {
+    background-image: url(https://cdn.pixabay.com/photo/2014/05/21/15/22/door-349807_1280.jpg);
+    background-size: cover;
+}

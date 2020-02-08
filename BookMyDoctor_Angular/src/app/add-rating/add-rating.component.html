@@ -1,0 +1,83 @@
+<div class="alert alert-success" *ngIf='message'>
+    {{message}}</div>
+<div class="alert alert-danger" *ngIf='error'>{{error}}</div>
+<div class=" card col-md-4 offset-4" style="margin-top: 50px;">
+    <div class="card-body">
+        <h4 class="text-center">Please Give Ratings Here!!</h4><br>
+        <form #addRatingForm='ngForm' (ngSubmit)='addRating(addRatingForm)'>
+
+            <div clas="form-group">
+                <!-- <label for="patientId">Patient Id</label> -->
+                <input type="hidden" name="patientId" id="patientId" #patientId='ngModel' [(ngModel)]='patientId1' class="form-control" required placeholder="Enter Patient Id" min="1" maxlength="10" pattern="^[1-9]+[0-9]*$">
+
+                <div class="text-danger" *ngIf='(patientId.dirty || patientId.touched) && patientId.invalid'>
+                    <div *ngIf='patientId.errors.required'>
+                        *This field is mandatory
+                    </div>
+                    <div *ngIf='patientId.errors.pattern'>
+                        *Only valid numbers are allowed
+                    </div>
+                    <div *ngIf='patientId.errors.min'>
+                        *Don't enter 0
+                    </div>
+                </div>
+            </div>
+            <div clas="form-group">
+                <label for="doctorId">Doctor Id</label>
+                <input type="text" name="doctorId" id="doctorId" #doctorId='ngModel' [(ngModel)]='doctorId1' class="form-control" required placeholder="Enter DoctorId Id" min="1" maxlength="10" pattern="^[1-9]+[0-9]*$">
+
+                <div class="text-danger" *ngIf='(doctorId.dirty || doctorId.touched) && doctorId.invalid'>
+                    <div *ngIf='doctorId.errors.required'>
+                        *This field is mandatory
+                    </div>
+                    <div *ngIf='doctorId.errors.pattern'>
+                        *Only valid numbers are allowed
+                    </div>
+                    <div *ngIf='doctorId.errors.min'>
+                        *Don't enter 0
+                    </div>
+                </div>
+
+            </div>
+            <div clas="form-group">
+                <label for="ratings">Ratings</label>
+                <input type="text" name="ratings" id="ratings" #ratings='ngModel' ngModel class="form-control" required pattern="[1-5]" maxlength="1">
+
+                <div class="text-danger" *ngIf='(ratings.dirty || ratings.touched) && ratings.invalid'>
+                    <div *ngIf='ratings.errors.required'>
+                        *This field is mandatory
+                    </div>
+
+                    <div *ngIf='ratings.errors.pattern'>
+                        *Please Enter only number(From 1 to 5)
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div clas="form-group">
+                <label for="feedback">Feedback</label>
+                <input type="text" name="feedback" id="feedback" #feedback='ngModel' ngModel class="form-control" pattern="^[a-zA-Z]+(?: [a-zA-Z]+)*$" minlength="2" maxlength="20" required placeholder="Enter Feedback">
+
+                <div class="text-danger" *ngIf='(feedback.dirty || feedback.touched) && feedback.invalid'>
+                    <div *ngIf='feedback.errors.required'>
+                        *This field is mandatory
+                    </div>
+                    <div *ngIf='feedback.errors.minlength'>
+                        *minimum 2 letters mandatory
+                    </div>
+                    <div *ngIf='feedback.errors.pattern'>
+                        *only alphabets are allowed
+                    </div>
+                </div>
+
+            </div>
+            <br>
+            <button type="submit" class="btn btn-outline-info float-right">Add Rating</button>
+        </form>
+
+
+    </div>
+
+</div>

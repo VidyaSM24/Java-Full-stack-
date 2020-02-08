@@ -1,0 +1,71 @@
+<nav class="nav navbar-expand-lg navbar-dark" style="background-color: #a01f62;height: 50px; ;">
+    <div class="collapse navbar-collapse " id="navbarNav ">
+        <ul class="navbar-nav ml-auto" style="margin-right:100px;">
+
+            <li class="nav-item">
+                <a class="nav-link active" routerLink="/login" *ngIf='!loggedIn()'>
+                    <img src="http://demo.bookmydoc.in/assets/images/home/2.png">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" *ngIf='loggedIn()' (click)='logout()'>
+                  Logout</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link active" *ngIf='isAdmin()' routerLink="/admin">
+                 Welcome to Admin</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link active" *ngIf='isDoctor()' routerLink="/doctor">
+                    Welcome to Doctor</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" *ngIf='isPatient()' routerLink="/patient">
+                    Welcome to Patient</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+<nav class="navbar navbar-default nav-main" style="height: 100px;">
+
+    <div class="container">
+        <div class=" logo-col" style="float: left;">
+            <div class="logo animated fadeInLeft">
+                <a href="/"><img src="http://demo.bookmydoc.in/admin/uploads/common/1493899510_logo.png" height="80px" width="200"></a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="signup">
+        <ul class="nav justify-content-center">
+
+
+            <!-- <li class="nav-item">
+                <a class="nav-link active" *ngIf='!loggedIn()' routerLink="/login">
+                 login</a>
+            </li> -->
+
+
+        </ul>
+    </div>
+    <div class="a5" class="col-md-12">
+        <ul class="nav justify-content-center" style="font-size: 15px; margin-top: -50px;margin-left: -400px;">
+            <li class="nav-item">
+                <a class="nav-link active" routerLink="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" routerLink="/terms">Terms</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" routerLink="/contact-us">Health Tips</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" routerLink="/tests">Diagnostics</a>
+            </li>
+        </ul>
+    </div>
+</nav>
